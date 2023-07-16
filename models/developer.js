@@ -1,7 +1,7 @@
 // require mongoose 
 const mongoose = require('mongoose');
 
-//Create the Schema
+//Create the Schema for Developer
 const developerSchema = new mongoose.Schema({
     name :{
         type : String
@@ -17,7 +17,7 @@ const developerSchema = new mongoose.Schema({
     },
     technology : {
         type : String,
-        required : true,
+        required : true
     },
     employed : {
         type : String,
