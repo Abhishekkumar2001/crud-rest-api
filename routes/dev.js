@@ -50,5 +50,20 @@ router.patch("/update/:id", async (req, res) => {
     }
 })
 
+// Delete the developer
+router.delete("/delete/:id", async (req, res) => {
+    try {
+        const { id: _id } = await req.params;
+        const changes = await req.body;
+
+        const deletedDeveloper = await Developer.findByIdAndDelete(_id, { ...changes, _id });
+        res.status(201).json({ message: "Success!" });
+    }
+    catch (err) {
+        res.status(400).json({ message: "Error!" });
+    }
+})
+
+
 
 module.exports = router;
